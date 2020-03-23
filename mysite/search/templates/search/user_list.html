@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+{% load skypeURIs %}
+
+{% block content %}
+  <form method="get">
+    <div class="well">
+      <h4 style="margin-top: 0">Filter</h4>
+      <div class="row">
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filter.form.name.label_tag }}
+          {% render_field filter.form.name class="form-control" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filter.form.age.label_tag }}
+          {% render_field filter.form.age class="form-control" %}
+        </div>
+      </div>
+
+      <p style="text-align:left;">
+
+        <button type="submit" class="btn btn-primary">
+          <span class="glyphicon glyphicon-search"></span> Search
+        </button>
+
+        <span style="float:right;">
+
+          {% skypeChatURI filter.qs as chatURI %}
+          <a href={{chatURI}} >
+            <img src="/static/Chat.png" border="0" alt="VoiceCall" width="35" height="35" hspace="0">
+          </a>
+
+          {% skypeVoiceURI filter.qs as voiceURI %}
+          <a href={{voiceURI}} >
+            <img src="/static/Phone.png" border="0" alt="VoiceCall" width="35" height="35" hspace="20">
+          </a>
+
+          {% skypeVideoURI filter.qs as videoURI %}
+          <a href={{videoURI}} >
+            <img src="/static/Video.png" border="0" alt="VideoCall" width="50" height="50">
+          </a>
+
+        </span>
+      </p>
+    </div>
+  </form>
+
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in filter.qs %}
+        <tr>
+          <td>{{ user.name }}</td>
+          <td>{{ user.age }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="5">No data</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
