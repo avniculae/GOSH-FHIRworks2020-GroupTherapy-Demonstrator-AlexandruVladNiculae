@@ -14,13 +14,7 @@ pip install -r requirements.txt
 
 ```bash
 python manage.py loaddata patients.json
-```
-
-```bash
 python manage.py makemigrations
-```
-
-```bash
 python manage.py migrate
 ```
 
