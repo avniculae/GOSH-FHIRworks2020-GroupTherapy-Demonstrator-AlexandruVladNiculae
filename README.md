@@ -1,11 +1,11 @@
-# Django Filter Example
+# GOSH-FHIRwork2020 Group Therapy Demonstrator
 
-Example used in the blog post [How to Filter QuerySets Dynamically](https://simpleisbetterthancomplex.com/tutorial/2016/11/28/how-to-filter-querysets-dynamically.html)
+Group therapy demonstrator using the [VOIP SkypeURI API](https://pypi.org/project/GOSH-FHIRworks2020-SkypeURI/).
 
 ## Running Locally
 
 ```bash
-git clone https://github.com/sibtc/repository-name.git
+git clone https://github.com/AlexNiculae/GOSH-FHIRworks2020-GroupTherapy-Demonstrator-AlexandruVladNiculae.git
 ```
 
 ```bash
